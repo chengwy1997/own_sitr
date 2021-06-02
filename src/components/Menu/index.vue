@@ -1,16 +1,16 @@
 <template>
   <nav class="Menu_index">
-    <a
-      :href="item.link"
+    <router-link
+      :exact="item.exact"
+      :to="item.link"
       v-for="item in items"
       :key="item.link"
-      :class="{ selected: isselected(item) }"
     >
       <div class="icon">
         <Icon :type="item.icon" />
       </div>
       <span>{{ item.title }}</span>
-    </a>
+    </router-link>
   </nav>
 </template>
 
@@ -27,27 +27,31 @@ export default {
           link: "/home",
           title: "首页",
           icon: "home",
+          exact: true,
         },
         {
           link: "/blog",
           title: "文章",
           icon: "blog",
-          startWith:'true'
+          exact: false,
         },
         {
           link: "/about",
           title: "关于我",
           icon: "about",
+          exact: true,
         },
         {
-          link: "/code",
+          link: "/Project",
           title: "项目&效果",
           icon: "code",
+          exact: true,
         },
         {
-          link: "/chat",
+          link: "/Message",
           title: "留言板",
           icon: "chat",
+          exact: true,
         },
       ],
     };
@@ -74,10 +78,10 @@ export default {
     padding: 0 50px;
     display: block;
     display: flex;
-    color: #2d2d2d;
+    color: #3d3d3d;
     align-items: center;
-    &.selected {
-      background: #2d2d2d;
+    &.router-link-exact-active {
+      background: yellow;
     }
     .icon {
       width: 24px;

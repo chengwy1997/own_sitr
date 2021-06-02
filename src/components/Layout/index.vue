@@ -22,7 +22,7 @@ export default {};
   height: 100%;
   display: flex;
   .left{
-    width: 200px;
+    width: 300px;
     height: 100%;
  
   }

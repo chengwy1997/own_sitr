@@ -6,7 +6,9 @@
           <SiteAside />
         </div>
       </template>
-      <template #default> 中间的位置 </template>
+      <template #default> 
+        <RouterView/>
+         </template>
     </Layout>
   </div>
 </template>
